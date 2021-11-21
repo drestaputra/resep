@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="0dp"
-    >
+    android:padding="0dp">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.drestaputra.masakapa.ui.kategori.CategoryViewModel" />
+            type="com.drestaputra.masakapa.ui.makanan.MakananViewModel" />
     </data>
 
     <FrameLayout
@@ -39,29 +37,38 @@
                     app:title="Masak Apa">
 
                     <LinearLayout
+                        android:id="@+id/LlBgTopBar"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:background="@drawable/bg_gradient_primary"
+                        android:backgroundTint="#8D3C3C3C"
+                        android:backgroundTintMode="src_over"
                         android:orientation="vertical"
                         android:paddingHorizontal="20dp">
 
                         <TextView
+                            android:id="@+id/TxvMasakApa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
                             android:layout_marginTop="20dp"
+                            android:maxLines="1"
+                            android:singleLine="true"
                             android:text="Masak Apa"
                             android:textColor="@android:color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/TxvDeskripsiCategory"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/lato"
+                            android:maxLines="1"
+
                             android:text="Mau bikin apa nih hari ini.."
                             android:textColor="@color/white"
-
                             android:textSize="16sp" />
 
                         <LinearLayout
@@ -76,7 +83,7 @@
                                 android:layout_weight="1"
                                 android:focusable="true"
                                 android:focusableInTouchMode="true"
-                                android:hint="Cari kategori..."
+                                android:hint="Cari menu..."
                                 android:padding="0dp"
                                 android:textColorHint="@color/colorWhite"
                                 android:theme="@style/TextInputLayoutStyle"
@@ -95,7 +102,7 @@
 
                                 <com.google.android.material.textfield.TextInputEditText
 
-                                    android:id="@+id/EtCariKategori"
+                                    android:id="@+id/EtCariMakanan"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/colorWhite" />
@@ -116,33 +123,36 @@
 
 
                     <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-
-                        />
+                        app:layout_collapseMode="pin"
+                        app:navigationIcon="@drawable/ic_back" />
 
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
             </com.google.android.material.appbar.AppBarLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fillViewport="true"
                 app:behavior_overlapTop="50dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context=".MainActivity">
+                tools:context=".ui.makanan.MakananActivity">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/kategori_grid"
+                    android:id="@+id/meals_grid"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:listData="@{viewModel.categories}"
+                    app:listDataMeal="@{viewModel.meals}"
                     app:spanCount="2"
                     tools:itemCount="16"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="107dp"
-                    tools:listitem="@layout/grid_view_item" />
+                    tools:listitem="@layout/grid_view_item_meal" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

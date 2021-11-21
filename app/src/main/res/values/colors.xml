@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#557669</color>
+    <color name="colorPrimary">#19B19D</color>
     <color name="colorPrimaryDark">#4890DD</color>
     <color name="colorSecondary">#fad500</color>
     <color name="colorSecondaryDark">#FF9800</color>
@@ -117,5 +117,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
 
-
+    <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
 </resources>

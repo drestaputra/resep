@@ -1,12 +1,15 @@
 package com.drestaputra.masakapa.ui.kategori
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.drestaputra.masakapa.data.model.Category
+import com.drestaputra.masakapa.model.Category
 import com.drestaputra.masakapa.databinding.GridViewItemBinding
+import com.drestaputra.masakapa.ui.makanan.MakananActivity
 
 
 class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCalback) {
@@ -14,6 +17,17 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCa
         fun bind(category: Category) {
             binding.category = category
             binding.executePendingBindings()
+            binding.CvItemCategory.setOnClickListener { view ->
+                val Idetail = Intent(
+                    view.context,
+                    MakananActivity::class.java
+                )
+                Idetail.putExtra("CategoryString", category.strCategory)
+                Idetail.putExtra("CategoryDescString", category.strCategoryDescription)
+                Idetail.putExtra("CategoryImage", category.strCategoryThumb)
+                Idetail.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                view.context.startActivity(Idetail)
+            }
         }
     }
 

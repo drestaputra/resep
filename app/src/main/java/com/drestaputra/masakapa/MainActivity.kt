@@ -2,16 +2,9 @@ package com.drestaputra.masakapa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.drestaputra.masakapa.data.api.APIList
-import com.drestaputra.masakapa.data.api.RetrofitClient
 import com.drestaputra.masakapa.databinding.ActivityMainBinding
 import com.drestaputra.masakapa.ui.kategori.CategoryViewModel
 import com.drestaputra.masakapa.ui.kategori.KategoriFragment
@@ -36,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 //        set agar bottom nav index ke 1 un clickable dan uncheckable, karena dialihkan fungsinya ke fab
         binding.bottomNavigationView.menu.getItem(1).isCheckable = false
         binding.bottomNavigationView.menu.getItem(1).isEnabled = false
+        binding.fab.setOnClickListener { v->
+            binding.bottomNavigationView
+        }
 
     }
 

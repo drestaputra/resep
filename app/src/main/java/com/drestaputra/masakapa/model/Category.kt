@@ -1,4 +1,4 @@
-package com.drestaputra.masakapa.data.model
+package com.drestaputra.masakapa.model
 
 
 data class Category(
