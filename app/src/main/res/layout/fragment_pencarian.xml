@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="0dp"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.drestaputra.masakapa.ui.pencarian.PencarianViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/ClHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:collapsedTitleTextAppearance="@style/TextAppearance.AppTheme.TextInputLayout.HintTextAlt"
+                    app:contentScrim="@color/colorPrimary"
+                    app:expandedTitleTextAppearance="@style/expandedBarTextStyle"
+                    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                    app:title="Masak Apa">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/bg_gradient_primary"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Masak Apa"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/lato"
+                            android:text="Mau bikin apa nih hari ini.."
+                            android:textColor="@color/white"
+
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.AppTheme.TextInputLayoutList"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:hint="Cari makanan..."
+                                android:padding="0dp"
+                                android:textColorHint="@color/colorWhite"
+                                android:theme="@style/TextInputLayoutStyle"
+                                app:boxBackgroundMode="outline"
+                                app:boxCornerRadiusBottomEnd="20dp"
+                                app:boxCornerRadiusBottomStart="20dp"
+                                app:boxCornerRadiusTopEnd="20dp"
+                                app:boxCornerRadiusTopStart="20dp"
+                                app:boxStrokeColor="@color/colorWhite"
+                                app:endIconDrawable="@drawable/ic_search"
+                                app:endIconMode="custom"
+                                app:endIconTint="@color/colorWhite"
+                                app:errorEnabled="true"
+                                app:hintAnimationEnabled="true"
+                                app:hintTextColor="@color/colorWhite">
+
+                                <com.google.android.material.textfield.TextInputEditText
+
+                                    android:id="@+id/EtCariMakanan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorWhite" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <ImageButton
+                                android:id="@+id/ImBSorting"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/bg_corner_rad"
+                                android:contentDescription="sort"
+                                android:src="@drawable/ic_sort_down"
+                                app:tint="@color/colorAccent" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+
+                        />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:behavior_overlapTop="50dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context=".MainActivity">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pencarian_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:listDataMealPencarian="@{viewModel.meals}"
+                    app:spanCount="2"
+                    tools:itemCount="16"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="107dp"
+                    tools:listitem="@layout/grid_view_item_meal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </FrameLayout>
+</layout>

@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_kategori" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.drestaputra.masakapa.ui.kategori.KategoriFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_kategori" />
+        android:id="@+id/navigation_search"
+        android:name="com.drestaputra.masakapa.ui.pencarian.PencarianFragment"
+        android:label="Pencarian"
+        tools:layout="@layout/fragment_pencarian" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.drestaputra.masakapa.ui.kategori.KategoriFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_kategori" />
+        android:id="@+id/navigation_about"
+        android:name="com.drestaputra.masakapa.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
 </navigation>

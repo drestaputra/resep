@@ -1,4 +1,4 @@
-package com.drestaputra.masakapa.ui.makanan
+package com.drestaputra.masakapa.ui.pencarian
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.drestaputra.masakapa.databinding.GridViewItemMealBinding
 import com.drestaputra.masakapa.model.Meal
 import com.drestaputra.masakapa.ui.detail_makanan.DetailMakananActivity
 
-class MakananAdapter : ListAdapter<Meal, MakananAdapter.ViewHolder>(DiffCalback) {
+class PencarianAdapter : ListAdapter<Meal, PencarianAdapter.ViewHolder>(DiffCalback) {
     class ViewHolder(private var binding: GridViewItemMealBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(meal: Meal) {
             binding.meal = meal
@@ -46,7 +46,7 @@ class MakananAdapter : ListAdapter<Meal, MakananAdapter.ViewHolder>(DiffCalback)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val category = getItem(position)
-        holder.bind(category)
+        val pencarian = getItem(position)
+        holder.bind(pencarian)
     }
 }

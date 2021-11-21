@@ -1,4 +1,5 @@
 package com.drestaputra.masakapa.ui.makanan
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
@@ -9,7 +10,6 @@ import com.bumptech.glide.request.target.SimpleTarget
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.transition.Transition
-
 
 
 class MakananActivity : AppCompatActivity() {
@@ -57,10 +57,10 @@ class MakananActivity : AppCompatActivity() {
             binding.mealsGrid.smoothScrollToPosition(0)
         }
         binding.ImBSorting.setOnClickListener {
-            if (isAsc){
+            if (isAsc) {
                 isAsc = false
                 binding.ImBSorting.setImageResource(com.drestaputra.masakapa.R.drawable.ic_sort_up)
-            }else{
+            } else {
                 isAsc = true
                 binding.ImBSorting.setImageResource(com.drestaputra.masakapa.R.drawable.ic_sort_down)
             }
@@ -68,7 +68,7 @@ class MakananActivity : AppCompatActivity() {
             // TODO: 21/11/2021 bug scroll/reset position
             binding.mealsGrid.smoothScrollToPosition(0)
         }
-        MakananAdapter().registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver(){
+        MakananAdapter().registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onChanged() {
                 // TODO: 21/11/2021 bug scroll/reset position
                 binding.mealsGrid.smoothScrollToPosition(0)

@@ -2,4 +2,13 @@
     <string name="app_name">Masak Apa</string>
     <string name="search">Search</string>
     <string name="title_home">Home</string>
+    <string name="instruksi">Instruksi</string>
+    <string name="bahan_bahan">Bahan-bahan</string>
+    <string name="yt">YT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="thanks">Semoga memberika yang terbaik. Terima kasih</string>
+    <string name="teknologi">Aplikasi ini digunakan sebagai bahan teknikal test teknologi kotlin dengan pola arsitektur MVVM (Model View View-Model). \n Teknologi yang digunakan : Kotlin, Coroutine, Retrofit, Glide, ViewModel, dll \n Waktu pengerjaan 2 hari</string>
+    <string name="web">https://drestaputra.com</string>
+    <string name="author">Aplikasi by Dresta Twas Ardha Putra</string>
 </resources>

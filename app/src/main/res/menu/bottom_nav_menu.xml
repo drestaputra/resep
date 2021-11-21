@@ -5,14 +5,14 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
         android:iconTint="#FFB5B5B5"
-        android:title="Home" />
+        android:title="Kategori" />
     <item
-        android:id="@+id/navigation_transaksi"
+        android:id="@+id/navigation_pencarian"
         android:title="Cari" />
     <item
-        android:id="@+id/navigation_lainnya"
-        android:icon="@drawable/ic_favorit"
-        android:title="Lainnya" />
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_about"
+        android:title="About" />
 
 
 </menu>
